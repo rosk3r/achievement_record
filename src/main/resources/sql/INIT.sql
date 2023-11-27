@@ -2,8 +2,8 @@ DROP DATABASE IF EXISTS accomplishments;
 CREATE DATABASE accomplishments;
 
 DROP TABLE t_achievements;
-DROP TABLE t_group;
 DROP TABLE t_student;
+DROP TABLE t_group;
 DROP TABLE t_specialization;
 DROP TABLE t_events;
 
