@@ -53,11 +53,11 @@ create table t_achievements
     id                bigint       not null
         primary key,
     event_id          bigint       not null,
-    person_id         bigint       not null,
+    student_id         bigint       not null,
     achievement_level varchar(128) not null,
 
     FOREIGN KEY (event_id) REFERENCES t_events (id),
-    FOREIGN KEY (person_id) REFERENCES t_student (id)
+    FOREIGN KEY (student_id) REFERENCES t_student (id)
 );
 
 --TABLES DATA INSERT--
@@ -87,7 +87,7 @@ VALUES (1, 'Спортивный марафон', 'Бег на длинные д
        (3, 'Творческий вечер', 'Выступления студентов с творческими номерами', 'Районный'),
        (4, 'Ярмарка вакансий', 'Представление компаний и предложения о работе', 'Областной');
 
-INSERT INTO t_achievements (id, event_id, person_id, achievement_level)
+INSERT INTO t_achievements (id, event_id, student_id, achievement_level)
 VALUES (1, 1, 1, 'Победитель'),
        (2, 2, 3, 'Лучший доклад'),
        (3, 3, 2, 'Лучшее творческое выступление'),
