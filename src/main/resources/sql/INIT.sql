@@ -29,6 +29,7 @@ create table t_group
         primary key,
     specialization_id bigint      not null,
     name              varchar(24) not null,
+    course         integer     not null,
 
     FOREIGN KEY (specialization_id) REFERENCES t_specialization (id)
 );
@@ -41,7 +42,6 @@ create table t_student
     last_name      varchar(64) not null,
     middle_name    varchar(64),
     birth_date     date        not null,
-    course         integer     not null,
     education_type varchar(24) not null,
     group_id       bigint      not null,
 
@@ -66,20 +66,20 @@ INSERT INTO t_specialization (id, name)
 VALUES (1, 'Информационные технологии'),
        (2, 'Электротехника');
 
-INSERT INTO t_group (id, specialization_id, name)
-VALUES (1, 1, 'IT-101'),
-       (2, 1, 'IT-102'),
-       (3, 2, 'ЭТ-201');
+INSERT INTO t_group (id, specialization_id, name, course)
+VALUES (1, 1, 'IT-101', 2),
+       (2, 1, 'IT-102', 1),
+       (3, 2, 'ЭТ-201', 3);
 
-INSERT INTO t_student (id, first_name, last_name, middle_name, birth_date, course, education_type, group_id)
-VALUES (1, 'Иван', 'Иванов', 'Иванович', '1990-01-15', 3, 'Очная', 1),
-       (2, 'Мария', 'Петрова', 'Сергеевна', '1992-05-20', 2, 'Заочная', 2),
-       (3, 'Алексей', 'Смирнов', 'Александрович', '1991-11-10', 4, 'Очная', 1),
-       (4, 'Екатерина', 'Козлова', 'Игоревна', '1993-08-25', 2, 'Очная', 3),
-       (5, 'Сергей', 'Федоров', 'Дмитриевич', '1990-03-18', 3, 'Заочная', 1),
-       (6, 'Анна', 'Кузнецова', 'Владимировна', '1992-09-05', 4, 'Очная', 2),
-       (7, 'Павел', 'Морозов', 'Андреевич', '1993-12-30', 2, 'Заочная', 3),
-       (8, 'Ольга', 'Новикова', 'Сергеевна', '1991-06-08', 3, 'Очная', 2);
+INSERT INTO t_student (id, first_name, last_name, middle_name, birth_date, education_type, group_id)
+VALUES (1, 'Иван', 'Иванов', 'Иванович', '1990-01-15', 'Очная', 1),
+       (2, 'Мария', 'Петрова', 'Сергеевна', '1992-05-20', 'Заочная', 2),
+       (3, 'Алексей', 'Смирнов', 'Александрович', '1991-11-10', 'Очная', 1),
+       (4, 'Екатерина', 'Козлова', 'Игоревна', '1993-08-25', 'Очная', 3),
+       (5, 'Сергей', 'Федоров', 'Дмитриевич', '1990-03-18', 'Заочная', 1),
+       (6, 'Анна', 'Кузнецова', 'Владимировна', '1992-09-05', 'Очная', 2),
+       (7, 'Павел', 'Морозов', 'Андреевич', '1993-12-30', 'Заочная', 3),
+       (8, 'Ольга', 'Новикова', 'Сергеевна', '1991-06-08', 'Очная', 2);
 
 INSERT INTO t_events (id, name, description, conduct_level)
 VALUES (1, 'Спортивный марафон', 'Бег на длинные дистанции', 'Международный'),
