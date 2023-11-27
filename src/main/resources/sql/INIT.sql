@@ -3,7 +3,7 @@ CREATE DATABASE accomplishments;
 
 DROP TABLE t_achievements;
 DROP TABLE t_group;
-DROP TABLE t_person;
+DROP TABLE t_student;
 DROP TABLE t_specialization;
 DROP TABLE t_events;
 
@@ -33,7 +33,7 @@ create table t_group
     FOREIGN KEY (specialization_id) REFERENCES t_specialization (id)
 );
 
-create table t_person
+create table t_student
 (
     id             bigint      not null
         primary key,
@@ -57,7 +57,7 @@ create table t_achievements
     achievement_level varchar(128) not null,
 
     FOREIGN KEY (event_id) REFERENCES t_events (id),
-    FOREIGN KEY (person_id) REFERENCES t_person (id)
+    FOREIGN KEY (person_id) REFERENCES t_student (id)
 );
 
 --TABLES DATA INSERT--
@@ -71,7 +71,7 @@ VALUES (1, 1, 'IT-101'),
        (2, 1, 'IT-102'),
        (3, 2, 'ЭТ-201');
 
-INSERT INTO t_person (id, first_name, last_name, middle_name, birth_date, course, education_type, group_id)
+INSERT INTO t_student (id, first_name, last_name, middle_name, birth_date, course, education_type, group_id)
 VALUES (1, 'Иван', 'Иванов', 'Иванович', '1990-01-15', 3, 'Очная', 1),
        (2, 'Мария', 'Петрова', 'Сергеевна', '1992-05-20', 2, 'Заочная', 2),
        (3, 'Алексей', 'Смирнов', 'Александрович', '1991-11-10', 4, 'Очная', 1),
