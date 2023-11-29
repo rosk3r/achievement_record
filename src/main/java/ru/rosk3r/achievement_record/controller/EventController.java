@@ -27,6 +27,16 @@ public class EventController {
         return new ResponseEntity<>(eventService.readAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/search-by-name")
+    public ResponseEntity<List<Event>> getByName(@RequestBody EventRequest eventRequest) {
+        return new ResponseEntity<>(eventService.getByName(eventRequest.getName()), HttpStatus.OK);
+    }
+
+    @GetMapping("/search-by-conduct-level")
+    public ResponseEntity<List<Event>> getByConductLevel(@RequestBody EventRequest eventRequest) {
+        return ResponseEntity.ok(eventService.getByConductLevel(eventRequest.getConductLevel())); //
+    }
+
     @PutMapping
     public ResponseEntity<Event> update(@RequestBody Event event) {
         return new ResponseEntity<>(eventService.update(event), HttpStatus.OK);

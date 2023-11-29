@@ -36,4 +36,12 @@ public class EventService {
         eventRepository.deleteById(id);
     }
 
+    public List<Event> getByName(String name) {
+        return eventRepository.findByName(name);
+    }
+
+    public List<Event> getByConductLevel(String conductLevel) {
+        return eventRepository.findByConductLevel(conductLevel);
+    }
+
 }
