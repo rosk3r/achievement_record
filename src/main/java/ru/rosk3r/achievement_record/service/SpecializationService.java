@@ -34,4 +34,8 @@ public class SpecializationService {
         specializationRepository.deleteById(id);
     }
 
+    public List<Specialization> getByName(String name) {
+        return specializationRepository.getByNameLikeIgnoreCase(name);
+    }
+
 }

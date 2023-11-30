@@ -27,6 +27,11 @@ public class SpecializationController {
         return new ResponseEntity<>(specializationService.readAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/get-by-name")
+    public ResponseEntity<List<Specialization>> getByName(@RequestBody SpecializationRequest specializationRequest) {
+        return new ResponseEntity<>(specializationService.getByName(specializationRequest.getName()), HttpStatus.OK);
+    }
+
     @PutMapping
     public ResponseEntity<Specialization> update(@RequestBody Specialization specialization) {
         return new ResponseEntity<>(specializationService.update(specialization), HttpStatus.OK);
