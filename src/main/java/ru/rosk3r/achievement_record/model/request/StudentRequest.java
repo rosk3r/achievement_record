@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class StudentRequest {
 
     private String firstName;
-    private String secondName;
+    private String lastName;
     private String middleName;
     private LocalDate birthDate;
     private String educationType;

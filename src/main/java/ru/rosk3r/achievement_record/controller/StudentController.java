@@ -35,7 +35,7 @@ public class StudentController {
     @GetMapping("/get-by-full-name")
     public ResponseEntity<List<Student>> getByFullName(@RequestBody StudentRequest studentRequest) {
         return new ResponseEntity<>(studentService.getByFullName(studentRequest.getFirstName(),
-                studentRequest.getSecondName(), studentRequest.getMiddleName()), HttpStatus.OK);
+                studentRequest.getLastName(), studentRequest.getMiddleName()), HttpStatus.OK);
     }
 
     @PutMapping

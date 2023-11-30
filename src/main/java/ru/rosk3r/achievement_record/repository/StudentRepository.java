@@ -13,11 +13,11 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     Student getByFirstName(String firstName);
 
-    Student getBySecondName(String secondName);
+    Student getByLastName(String lastName);
 
     Student getByMiddleName(String middleName);
 
-    List<Student> getByFirstNameLikeIgnoreCaseAndSecondNameLikeIgnoreCaseAndMiddleNameLikeIgnoreCase(
-            String firstName, String secondName, String middleName);
+    List<Student> getByFirstNameLikeIgnoreCaseAndLastNameLikeIgnoreCaseAndMiddleNameLikeIgnoreCase(
+            String firstName, String lastName, String middleName);
 
 }

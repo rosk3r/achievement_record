@@ -17,7 +17,7 @@ public class StudentService {
     public Student create(StudentRequest studentRequest) {
         Student student = Student.builder()
                 .firstName(studentRequest.getFirstName())
-                .secondName(studentRequest.getSecondName())
+                .lastName(studentRequest.getLastName())
                 .middleName(studentRequest.getMiddleName())
                 .birthDate(studentRequest.getBirthDate())
                 .educationType(studentRequest.getEducationType())
@@ -43,17 +43,17 @@ public class StudentService {
         return studentRepository.getByEducationType(educationType);
     }
 
-    public List<Student> getByFullName(String firstName, String secondName, String middleName) {
-        return studentRepository.getByFirstNameLikeIgnoreCaseAndSecondNameLikeIgnoreCaseAndMiddleNameLikeIgnoreCase(
-                firstName, secondName, middleName);
+    public List<Student> getByFullName(String firstName, String lastName, String middleName) {
+        return studentRepository.getByFirstNameLikeIgnoreCaseAndLastNameLikeIgnoreCaseAndMiddleNameLikeIgnoreCase(
+                firstName, lastName, middleName);
     }
 
     public Student getByFirstName(String firstName) {
         return studentRepository.getByFirstName(firstName);
     }
 
-    public Student getBySecondName(String secondName) {
-        return studentRepository.getByFirstName(secondName);
+    public Student getBySecondName(String lastName) {
+        return studentRepository.getByFirstName(lastName);
     }
 
     public Student getByMiddleName(String middleName) {
