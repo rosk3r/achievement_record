@@ -43,8 +43,9 @@ public class StudentService {
         return studentRepository.getByEducationType(educationType);
     }
 
-    public Student getByFullName(String firstName, String secondName, String middleName) {
-        return studentRepository.getByFirstNameAndSecondNameAndMiddleName(firstName, secondName, middleName);
+    public List<Student> getByFullName(String firstName, String secondName, String middleName) {
+        return studentRepository.getByFirstNameLikeIgnoreCaseAndSecondNameLikeIgnoreCaseAndMiddleNameLikeIgnoreCase(
+                firstName, secondName, middleName);
     }
 
     public Student getByFirstName(String firstName) {
