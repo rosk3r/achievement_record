@@ -36,4 +36,8 @@ public class AchievementService {
         achievementRepository.deleteById(id);
     }
 
+    public List<Achievement> getByAchievementLevel(String achievementLevel) {
+        return achievementRepository.getByAchievementLevel(achievementLevel);
+    }
+
 }

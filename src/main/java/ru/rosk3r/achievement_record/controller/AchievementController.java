@@ -27,6 +27,12 @@ public class AchievementController {
         return new ResponseEntity<>(achievementService.readAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/get-by-achievement-level")
+    public ResponseEntity<List<Achievement>> getByAchievementLevel(@RequestBody AchievementRequest achievementRequest) {
+        return new ResponseEntity<>(achievementService.
+                getByAchievementLevel(achievementRequest.getAchievementLevel()), HttpStatus.OK);
+    }
+
     @PutMapping
     public ResponseEntity<Achievement> update(@RequestBody Achievement achievement) {
         return new ResponseEntity<>(achievementService.update(achievement), HttpStatus.OK);
