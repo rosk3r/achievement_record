@@ -27,6 +27,17 @@ public class StudentController {
         return new ResponseEntity<>(studentService.readAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/get-by-education-type")
+    public ResponseEntity<List<Student>> getByEducationType(@RequestBody StudentRequest studentRequest) {
+        return new ResponseEntity<>(studentService.getByEducationType(studentRequest.getEducationType()), HttpStatus.OK);
+    }
+
+    @GetMapping("/get-by-full-name")
+    public ResponseEntity<Student> getByFullName(@RequestBody StudentRequest studentRequest) {
+        return new ResponseEntity<>(studentService.getByFullName(studentRequest.getFirstName(),
+                studentRequest.getSecondName(), studentRequest.getMiddleName()), HttpStatus.OK);
+    }
+
     @PutMapping
     public ResponseEntity<Student> update(@RequestBody Student student) {
         return new ResponseEntity<>(studentService.update(student), HttpStatus.OK);

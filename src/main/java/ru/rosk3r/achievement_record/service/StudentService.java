@@ -39,4 +39,24 @@ public class StudentService {
         studentRepository.deleteById(id);
     }
 
+    public List<Student> getByEducationType(String educationType) {
+        return studentRepository.getByEducationType(educationType);
+    }
+
+    public Student getByFullName(String firstName, String secondName, String middleName) {
+        return studentRepository.getByFirstNameAndSecondNameAndMiddleName(firstName, secondName, middleName);
+    }
+
+    public Student getByFirstName(String firstName) {
+        return studentRepository.getByFirstName(firstName);
+    }
+
+    public Student getBySecondName(String secondName) {
+        return studentRepository.getByFirstName(secondName);
+    }
+
+    public Student getByMiddleName(String middleName) {
+        return studentRepository.getByFirstName(middleName);
+    }
+
 }
