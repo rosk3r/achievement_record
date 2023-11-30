@@ -1,9 +1,6 @@
 package ru.rosk3r.achievement_record.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,10 +13,11 @@ import java.time.LocalDate;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "t_student")
 public class Student {
 
     private String firstName;
-    private String secondName;
+    private String lastName;
     private String middleName;
     private LocalDate birthDate;
     private String educationType;
