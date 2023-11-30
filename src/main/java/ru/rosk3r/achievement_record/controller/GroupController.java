@@ -27,6 +27,17 @@ public class GroupController {
         return new ResponseEntity<>(groupService.readAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/get-by-name")
+    public ResponseEntity<List<Group>> getByName(@RequestBody GroupRequest groupRequest) {
+        return new ResponseEntity<>(groupService.getByName(groupRequest.getName()), HttpStatus.OK);
+    }
+
+    @GetMapping("/get-by-course")
+    public ResponseEntity<List<Group>> getByCourse(@RequestBody GroupRequest groupRequest) {
+        return new ResponseEntity<>(groupService.getByCourse(groupRequest.getCourse()), HttpStatus.OK);
+    }
+
+
     @PutMapping
     public ResponseEntity<Group> update(@RequestBody Group group) {
         return new ResponseEntity<>(groupService.update(group), HttpStatus.OK);

@@ -36,4 +36,12 @@ public class GroupService {
         groupRepository.deleteById(id);
     }
 
+    public List<Group> getByName(String name) {
+        return groupRepository.getByNameLikeIgnoreCase(name);
+    }
+
+    public List<Group> getByCourse(int course) {
+        return groupRepository.getByCourse(course);
+    }
+
 }
