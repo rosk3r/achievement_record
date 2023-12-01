@@ -53,11 +53,11 @@ public class StudentService {
     }
 
     public Student getBySecondName(String lastName) {
-        return studentRepository.getByFirstName(lastName);
+        return studentRepository.getByLastName(lastName);
     }
 
     public Student getByMiddleName(String middleName) {
-        return studentRepository.getByFirstName(middleName);
+        return studentRepository.getByMiddleName(middleName);
     }
 
 }
