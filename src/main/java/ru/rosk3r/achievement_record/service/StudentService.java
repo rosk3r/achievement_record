@@ -52,7 +52,7 @@ public class StudentService {
         return studentRepository.getByFirstName(firstName);
     }
 
-    public Student getBySecondName(String lastName) {
+    public Student getByLastName(String lastName) {
         return studentRepository.getByLastName(lastName);
     }
 
