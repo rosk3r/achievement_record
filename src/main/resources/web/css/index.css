@@ -1,0 +1,68 @@
+body {
+    background-color: #44504a;
+    color: #ddd;
+}
+/* Set the top bar dimensions and border-radius */
+.topnav {
+    width: 1000px;
+    height: 60px;
+    border-radius: 15px;
+    background-color: #73837B;
+    overflow: hidden;
+    margin: 0 auto; /* Center the top bar horizontally */
+    display: flex;
+    justify-content: center; /* Center the children horizontally */
+    align-items: center; /* Center the children vertically */
+}
+
+/* Center the links inside the navigation bar */
+.topnav a {
+    display: inline-block;
+    float: none;
+    text-align: center;
+    line-height: 60px; /* Vertically center the text within the top bar */
+    box-sizing: border-box;
+    color: #ddd;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 10px;
+}
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #97ABA1;
+    color: #ddd;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  /* Style the search box */
+#mySearch {
+    width: 100%;
+    font-size: 18px;
+    padding: 11px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Style the navigation menu */
+  #myMenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Style the navigation links */
+  #myMenu li a {
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+    display: block
+  }
+  
+  #myMenu li a:hover {
+    background-color: #eee;
+  }
